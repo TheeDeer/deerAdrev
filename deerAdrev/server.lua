@@ -35,6 +35,8 @@ RegisterCommand('adrev', function(source, args, rawCommand)
                 return TriggerClientEvent('deerAdrev:adrev', target,target, source, false)
             end
         end
+    else
+        TriggerClientEvent('deerAdrev:notif:ret', source, "You do not have permission to use /adrev")
     end
 end)
 
@@ -50,6 +52,8 @@ RegisterCommand('adres', function(source, args, rawCommand)
                 TriggerClientEvent('deerAdrev:adres',target,target, source, false)
             end
         end
+    else
+        TriggerClientEvent('deerAdrev:notif:ret', source, "You do not have permission to use /adres")
     end
 end)
 
@@ -60,6 +64,8 @@ RegisterCommand('adrevall', function(source, args, rawCommand)
             discordLog(source, false, config.adresall.webhook)
         end
         TriggerClientEvent('deerAdrev:adrev', -1, 0, source, true)
+    else
+        TriggerClientEvent('deerAdrev:notif:ret', source, "You do not have permission to use /adrevall")
     end
 end)
 
@@ -70,6 +76,8 @@ RegisterCommand('adresall', function(source, args, rawCommand)
             discordLog(source, false, config.adresall.webhook)
         end
         TriggerClientEvent('deerAdrev:Adres', -1, 0, source, true)
+    else
+        TriggerClientEvent('deerAdrev:notif:ret', source, "You do not have permission to use /adresall")
     end
 end)
 
